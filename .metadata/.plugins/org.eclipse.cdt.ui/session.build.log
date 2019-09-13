@@ -1,0 +1,44 @@
+16:25:22 **** Incremental Build of configuration Debug for project session ****
+make all 
+Building file: ../app.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"app.d" -MT"app.o" -c -o "app.o" "../app.c"
+In file included from ../app.c:9:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../app.c:9:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../app.c:10: warning: return type of 'main' is not 'int'
+Finished building: ../app.c
+ 
+Building target: session.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,session.map -mmcu=atmega32 -o "session.elf"  ./app.o   
+Finished building target: session.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S session.elf  >"session.lss"
+Finished building: session.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex session.elf  "session.hex"
+Finished building: session.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 session.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     170 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:25:24 Build Finished (took 1s.842ms)
+

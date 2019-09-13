@@ -1,0 +1,29 @@
+/*
+ * App.c
+ *
+ *  Created on: Sep 6, 2019
+ *      Author: mom
+ */
+#include"STD_TYPES.h"
+#include<avr/io.h>
+#include"LCD_INTERFACE.h"
+#include "ADC_INTERFACE.h"
+
+int main()
+{
+DDRA=0x00;
+DDRC=0xff;
+DDRB=0xff;
+DDRD=0xff;
+ADC_INIT();
+
+while(1)
+{
+	ReadChannel(0);
+	u8 tempature=Temp_value(PORTC);
+	Print_temp(tempature);
+LcdWriteCmd(0x01);
+}
+return 0;
+}
+

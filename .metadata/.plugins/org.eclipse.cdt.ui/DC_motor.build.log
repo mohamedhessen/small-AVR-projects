@@ -1,0 +1,45 @@
+23:59:37 **** Incremental Build of configuration Debug for project DC_motor ****
+make all 
+Building file: ../app.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"app.d" -MT"app.o" -c -o "app.o" "../app.c"
+In file included from ../app.c:8:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../app.c:8:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../app.c: In function 'main':
+../app.c:20: warning: implicit declaration of function 'init'
+Finished building: ../app.c
+ 
+Building target: DC_motor.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DC_motor.map -mmcu=atmega32 -o "DC_motor.elf"  ./DC-MOTOR_INTERFACE.o ./app.o ./source.o   
+Finished building target: DC_motor.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DC_motor.elf  >"DC_motor.lss"
+Finished building: DC_motor.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DC_motor.elf  "DC_motor.hex"
+Finished building: DC_motor.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DC_motor.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5270 bytes (16.1% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:59:40 Build Finished (took 2s.977ms)
+

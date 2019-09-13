@@ -1,0 +1,20 @@
+14:17:34 **** Incremental Build of configuration Debug for project KeyPad ****
+make all 
+Building file: ../KPD_source.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"KPD_source.d" -MT"KPD_source.o" -c -o "KPD_source.o" "../KPD_source.c"
+In file included from ../KPD_source.c:7:
+../DIO_INTERFACE.h:32: error: expected ')' before 'u8PortId_Copy'
+../DIO_INTERFACE.h:33: error: expected ')' before 'u8PortId_Copy'
+../DIO_INTERFACE.h:34: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_GetPinValue'
+../DIO_INTERFACE.h:35: error: expected ')' before 'u8PortId'
+../DIO_INTERFACE.h:36: error: expected ')' before 'u8PortId'
+In file included from ../KPD_source.c:8:
+../KPD_INTERFACE.h:17: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'GetPressesKey'
+../KPD_source.c: In function 'GetPressesKey':
+../KPD_source.c:20: warning: implicit declaration of function 'DIO_SetPinValue'
+../KPD_source.c:27: warning: implicit declaration of function '__delay_ms'
+make: *** [KPD_source.o] Error 1
+
+14:17:35 Build Finished (took 760ms)
+

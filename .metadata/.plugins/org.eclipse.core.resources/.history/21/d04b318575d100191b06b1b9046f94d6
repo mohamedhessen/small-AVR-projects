@@ -1,0 +1,40 @@
+/*
+ * app.c
+ *
+ *  Created on: Aug 24, 2019
+ *      Author: mom
+ */
+#include "STD_TYPES.h"
+#include "MATH.h"
+#include "DIO_INTERFACE.h"
+#include "LCD_INTERFACE.h"
+#include "avr/delay.h"
+int main()
+{
+	PORT_INIT();
+	LCD_INIT();			/* Initialize LCD */
+    u32 x=48;
+    LcdWriteData(x);
+    while(1)
+    {
+    }
+  // LcdWriteCmd(0xC0);		/* Go to 2nd line*/
+   	/* Write string on 2nd line*/
+
+	return 0;
+}
+
+/*
+ * while(1)
+   {
+	   //GetRowcol(1,4);
+	   if(x==57)
+		   break;
+	      	LcdWriteData(x);
+	      	x++;
+	      	LcdWriteCmd(0xC5);
+	      	_delay_ms(1000);
+
+   }
+   */
+ */

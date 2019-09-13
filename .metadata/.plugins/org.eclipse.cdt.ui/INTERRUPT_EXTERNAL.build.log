@@ -1,0 +1,10 @@
+17:35:06 **** Incremental Build of configuration Debug for project INTERRUPT_EXTERNAL ****
+make all 
+Building target: INTERRUPT_EXTERNAL.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,INTERRUPT_EXTERNAL.map -mmcu=atmega32 -o "INTERRUPT_EXTERNAL.elf"  ./initerrupt_external.o   
+f:/tools/sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o:(.init9+0x0): undefined reference to `main'
+make: *** [INTERRUPT_EXTERNAL.elf] Error 1
+
+17:35:07 Build Finished (took 406ms)
+

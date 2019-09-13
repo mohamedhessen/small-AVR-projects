@@ -1,0 +1,43 @@
+13:27:46 **** Incremental Build of configuration Debug for project KPD ****
+make all 
+Building file: ../app.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"app.d" -MT"app.o" -c -o "app.o" "../app.c"
+In file included from ../app.c:13:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../app.c:13:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../app.c
+ 
+Building target: KPD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,KPD.map -mmcu=atmega32 -o "KPD.elf"  ./KPD_source.o ./LCD_source.o ./app.o ./source.o   
+Finished building target: KPD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S KPD.elf  >"KPD.lss"
+Finished building: KPD.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex KPD.elf  "KPD.hex"
+Finished building: KPD.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 KPD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8320 bytes (25.4% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+13:27:47 Build Finished (took 969ms)
+

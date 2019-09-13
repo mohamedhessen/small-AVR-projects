@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/DC_motor/DIO_INTERFACE.h" element2="/DC_motor/DIO_PRIVATE.h" element3="/DC_motor/source.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1567626087581"/>
+</session>

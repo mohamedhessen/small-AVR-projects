@@ -1,0 +1,19 @@
+/*
+ * ADC_source.c
+ *
+ *  Created on: Sep 6, 2019
+ *      Author: mom
+ */
+#include<avr/io.h>
+#include"STD_TYPES.h"
+
+/**********ADC_INIT Description********/
+
+void ADC_INIT(void)
+{
+ADMUX|=(1<<6)|(1<<5);
+ADCSRA|=(1<<7);
+ADCSRA|=(1<<1)|(1<<2);
+
+}
+

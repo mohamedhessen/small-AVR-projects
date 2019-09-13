@@ -1,0 +1,54 @@
+23:40:34 **** Incremental Build of configuration Debug for project ADC_DRIVER ****
+make all 
+Building file: ../App.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"App.d" -MT"App.o" -c -o "App.o" "../App.c"
+In file included from ../App.c:9:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../App.c:9:
+f:/tools/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../App.c:30: warning: return type defaults to 'int'
+../App.c: In function 'ISR':
+../App.c:30: warning: type of '__vector_16' defaults to 'int'
+../App.c:34: warning: implicit declaration of function 'Temp_value'
+../App.c:35: warning: implicit declaration of function 'Print_temp'
+../App.c:39: warning: control reaches end of non-void function
+Finished building: ../App.c
+ 
+Building file: ../initerrupt_external.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"initerrupt_external.d" -MT"initerrupt_external.o" -c -o "initerrupt_external.o" "../initerrupt_external.c"
+Finished building: ../initerrupt_external.c
+ 
+Building target: ADC_DRIVER.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC_DRIVER.map -mmcu=atmega32 -o "ADC_DRIVER.elf"  ./ADC_source.o ./App.o ./LCD_source.o ./initerrupt_external.o ./source.o   
+Finished building target: ADC_DRIVER.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC_DRIVER.elf  >"ADC_DRIVER.lss"
+Finished building: ADC_DRIVER.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC_DRIVER.elf  "ADC_DRIVER.hex"
+Finished building: ADC_DRIVER.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC_DRIVER.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8780 bytes (26.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:40:37 Build Finished (took 3s.369ms)
+

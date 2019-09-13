@@ -1,0 +1,38 @@
+15:16:11 **** Build of configuration Debug for project DIO_DRIVER ****
+make all 
+Building file: ../app.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"app.d" -MT"app.o" -c -o "app.o" "../app.c"
+Finished building: ../app.c
+ 
+Building target: DIO_DRIVER.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DIO_DRIVER.map -mmcu=atmega32 -o "DIO_DRIVER.elf"  ./app.o ./source.o   
+Finished building target: DIO_DRIVER.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DIO_DRIVER.elf  >"DIO_DRIVER.lss"
+Finished building: DIO_DRIVER.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DIO_DRIVER.elf  "DIO_DRIVER.hex"
+Finished building: DIO_DRIVER.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DIO_DRIVER.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    1726 bytes (5.3% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+15:16:12 Build Finished (took 1s.376ms)
+

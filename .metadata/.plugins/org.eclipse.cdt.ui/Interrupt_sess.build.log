@@ -1,0 +1,20 @@
+17:24:57 **** Incremental Build of configuration Debug for project Interrupt_sess ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Interrupt_sess.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3744 bytes (11.4% Full)
+(.text + .data + .bootloader)
+
+Data:         10 bytes (0.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+17:24:59 Build Finished (took 2s.146ms)
+
